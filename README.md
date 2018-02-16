@@ -10,13 +10,18 @@ View the application [here](https://planethackathon.github.io/AEGB/)!
 
 ## Meta
 
-Amanda Wisniowski – FullStack Developer, UX Design & Tester
+Isai Solis – Backend Developer & Tester
 
-Lorna Stevens – Full Stack Developer, Content Editor & Tester
+Tony Pekearo – Frontend Developer & Tester
 
-Austin Parisi – Full Stack Developer & SendBird Chat Specialist
+Lisa Jetton – Backend Developer & Content Editor
 
-Lisa Jetton – Full Stack Developer, UX Design & Content Editor
+Daisy Torres - UX Design & Content Editor
+
+Sam Kahn - UX Design & Product Developement
+
+Nico Robles – UX Design & Product Developement
+
 
 
 <!-- Markdown link & img dfn's -->
