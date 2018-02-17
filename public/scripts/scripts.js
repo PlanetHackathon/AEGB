@@ -522,24 +522,42 @@ function draw() {
 	job = setTimeout("draw()", 5);
 }
 
-function drawWithInputValue() {
+var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
 
-	var txtSpeed = document.getElementById('txtSpeed');
+function runQuery(facilityAddress){
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).done(function(response){
+		console.log("------------------------------------");
+		console.log("URL: " + queryURL);
+		console.log("------------------------------------");
+		console.log(response);
+		console.log("------------------------------------");
 
-	if (txtSpeed !== null) {
+		for (var i=0; i<response.length; i++){
+			if (response[i].facility_address === facilityAddress){
+				 return console.log(response[i]);
+			}
+		}
+		function drawWithInputValue() {
 
-        iTargetSpeed = txtSpeed.value;
+			iTargetSpeed = response.calculated_eui_kwh_sqft;
 
-		// Sanity checks
-		if (isNaN(iTargetSpeed)) {
-			iTargetSpeed = 0;
-		} else if (iTargetSpeed < 0) {
-			iTargetSpeed = 0;
-		} else if (iTargetSpeed > 80) {
-			iTargetSpeed = 80;
-        }
+			// Sanity checks
+			if (isNaN(iTargetSpeed)) {
+				iTargetSpeed = 0;
+			} else if (iTargetSpeed < 0) {
+				iTargetSpeed = 0;
+			} else if (iTargetSpeed > 300) {
+				iTargetSpeed = 300;
+			}
 
-        job = setTimeout("draw()", 5);
- 
-    }
+			job = setTimeout("draw()", 5);
+
+			
+		}
+	}) 
+	   
 }
+runQuery("3311 ESPERANZA CROSSING, AUSTIN TX, 78758");
