@@ -522,56 +522,5 @@ function draw() {
 	job = setTimeout("draw()", 5);
 }
 
-var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
-
-function runQuery(facilityAddress){
-	$.ajax({
-		url: queryURL,
-		method: "GET"
-	}).done(function(response){
-		console.log("------------------------------------");
-		console.log("URL: " + queryURL);
-		console.log("------------------------------------");
-		console.log(response);
-		console.log("------------------------------------");
-
-		for (var i=0; i<response.length; i++){
-			if (response[i].facility_address === facilityAddress){
-				return console.log(response[i]);
-			}
-		}
-
-		function drawWithInputValue() {
-
-			iTargetSpeed = response.calculated_eui_kwh_sqft;
-
-			// Sanity checks
-			if (isNaN(iTargetSpeed)) {
-				iTargetSpeed = 0;
-			} else if (iTargetSpeed < 0) {
-				iTargetSpeed = 0;
-			} else if (iTargetSpeed > 300) {
-				iTargetSpeed = 300;
-			}
-
-			job = setTimeout("draw()", 5);
-
-			
-		}
-	}) 
-	function renderMetrics(){
-		$("#metricsView").empty();
-		var json = JSON.parse('../buildingData.json');
-			for(var i=0; i<json.length; i++)
-			console.log(json.data);
-			// var metricsUl = $("<ul class='list-group list-group-flush'>");
-			// var metricsLi = $("<li class='list-group-item'>json[i]</li>")
-			// metricsUl.append(metricsLi);
-
-	}
-	renderMetrics();
-
-}
-runQuery("3311 ESPERANZA CROSSING, AUSTIN TX, 78758");
 
 
