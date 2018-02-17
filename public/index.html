@@ -4,20 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlanetHackathon</title>
-    <script src="scripts/speedometer.js"></script>
+    <title>Green Building</title>
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">    
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- jQuery Script -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap Script -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Chart.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Gauge Script -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 </head>
 
-<body onload='draw(0);'>
+<body>
     <nav class="navbar navbar-light navbar-expand-md d-block d-flex m-auto navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#">Green Building</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
@@ -29,51 +40,82 @@
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
                 </form><a class="btn btn-light action-button" role="button" href="#">Action </a></div>
         </div>
-    </nav><img src="assets/img/capital.jpg" width="100%" height="75%" style="display:block;">
-<<<<<<< HEAD
-    <div class="container" style="width: 100%">
-		<canvas id="tutorial" width="440" height="220">
-			Canvas not available.
-		</canvas>
-		<div>
-			<form id="drawTemp">
-				<input type="text" id="txtSpeed" name="txtSpeed" value="20" maxlength="2"/>
-				<input type="button" value="Draw" onclick="drawWithInputValue();">
-			</form>
-		</div>
-    </div>
+    </nav>
+    <img class="parallax" src="assets/img/capital.jpg" width="100%" height="75%" style="display:block;">
 
-=======
     <div class="projects-horizontal">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Building Dashboard</h2>
+                <h2 class="text-center">Green Building Overview</h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <h3 id="eui" class="text-center">KWH</h3>
+                    <div class="row">
+                        <div class="col-md-12"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <h3 id="kbtu" class="text-center">KBTU</h3>
+                    <div class="row">       
+                        <div class="col-md-12"><a href="#"><img class="img-fluid" src="assets/img/building.jpg" alt="EUI Speedometer"></a></div>
+                    </div>
+                </div>
+                <div class="col-sm-12 item">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-center">Portfolio Manager Score</h3>
+                            <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        <div class="col-sm-12"><a href="#"><img class="img-fluid" src="" alt="bell curve"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img class="parallax" src="assets/img/city.jpg" width="100%" height="75%"/>
+
+    <div class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Projects </h2>
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <div class="row projects">
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/water.jpg"></a></div>
                         <div class="col">
-                            <h3 class="name">EUI</h3>
-                            <img src=""/>
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/lightbulb.jpg"></a></div>
                         <div class="col">
-                            <h3 class="name">KBTU</h3>
-                            <img src=""/>
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 item">
+                <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-sm-12"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
                         <div class="col">
-                            <h3 class="name">Portfolio Manager Score</h3>
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/minibus.jpeg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
                         </div>
                     </div>
@@ -81,7 +123,56 @@
             </div>
         </div>
     </div>
->>>>>>> 97b9405d7ba5644823e6d245cfe1e1be606a3e55
+
+    <img class="parallax" src="assets/img/sunset.jpg" width="100%">
+
+    <div class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Projects </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/water.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/lightbulb.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/minibus.jpeg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -108,12 +199,10 @@
                     </div>
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">Austin Energy Green Building © 2018</p>
             </div>
         </footer>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
