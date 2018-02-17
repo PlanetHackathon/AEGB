@@ -1,18 +1,24 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var fs = require('fs');
+var data = fs.readFileSync('./public/buildingData.json', 'utf8');
+var words = JSON.parse(data);
 
 var port = 3000;
 
 var app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Import routes and give the server access to them.
-var routes = require("./app/controllers/bldgAwnsController.js");
-
-app.use("/", routes);
+app.use(bodyParser.json());
 
 app.listen(port);
+
+app.get("/data",(req,res)=>{
+    res.send(words);
+});
+
+console.log( typeof words);
+process.stdout.write(JSON.stringify(data));
