@@ -1,1 +1,312 @@
+<<<<<<< HEAD
 // this is the index.js in the views folder
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Green Building</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" sizes="16x16" href="assets/img/capital.jpg">
+
+    <!-- Materalize CSS Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- BOOTSTRAP CSS Stylesheet -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">    
+    <!--Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!--jQuery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--Materialize JS-->
+   <!--  <script src="assets/materialize/js/materialize.min.js"></script>   -->
+    <!-- Bootstrap Script -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Chart.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Gauge Script -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+</head>
+
+  <body>
+    <nav id="global-nav" class="navbar navbar-expand-lg navbar-light">
+      <a id="main-logo" class="navbar-brand" href="#">Green Building</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent" style="background-color: #394b52; margin:10px; padding:20px;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #99CCCC" href="#projects-intro">Green Dashboard<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #99CCCC" href="#people-banner1">Building Measures</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #99CCCC" href="#measures-container">Community Impact</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <a class="btn btn-lg btn-light action-button" role="button" href="https://austinenergyapp.com" target="_blank" style=" background-color:#56c6c6; border-radius: 5px; color: #fff !important; border-color: #56c6c6"><h5 style="line-height: 0.5; color:white">Find My Home</h5></a>
+        </div>
+      </div>
+    </nav>
+    <!--NavBar End-->
+
+    <!--Start Parallax-->
+    <div class="parallax-container" style="height: 1000px">
+        <div id="heading-picture" class="parallax"></div>
+    </div>
+    <!--End Parallax-->
+
+    <!--Start Search-Area-->
+    <div id="search-container" class="projects-horizontal" style="height:300px">
+        <div class="container">
+            <div id="search" class="row">
+                <div class="col-sm-12">
+                    <form class="mr-auto" target="_self">
+                        <div class="form-group text-center">
+                            <label for="search-field"><i class="glyphicon glyphicon-phone-alt" style="font-size:40px;"></i><h3>Search for a building here.</h3></label>
+                            <input class="form-control search-field" type="search" name="search" id="search-field">
+                        </div>
+                        <div class="col-md-2 col-xs-2 col1 center-block"> 
+                            <a class="btn btn-lg btn-light action-button" role="button">Submit</a>
+                        </div>
+                    </form>
+                </div>            
+            </div>
+        </div>
+    </div>
+    <!--End Search-Area-->
+
+    <!--Start Parallax-->
+    <div class="parallax-container">
+        <div id="heading-picture" class="parallax"></div>
+    </div>
+    <!--End Parallax-->
+ 
+    <!--Start Dashboard-->
+    <div id="projects-intro" class="projects-horizontal">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Green Building Overview</h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <h3 id="eui" class="text-center">KWH</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="width: 600px; height: 400px; margin: 0 auto">
+                                <div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
+                                <div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <h3 id="kbtu" class="text-center">KBTU</h3>
+                    <div class="row">       
+                        <div class="col-md-6">
+                            <div style="width: 600px; height: 400px; margin: 0 auto">
+                                <div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
+                                <div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 item">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-center">Portfolio Manager Score</h3>
+                            <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        <div class="col-sm-12 mx-auto" style="width: 500px" ><img class="img-fluid" style="width: 500px" src="assets/img/bellcurve.png" alt="bell curve"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--End Dashboard-->
+
+    <!--Start Parallax-->
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/img/city.jpg" alt="Background Pic 2"></div>
+    </div>
+    <!--End Parallax-->
+
+    <!--Start Activity Carousel-->
+    <div class="projects-horizontal">
+        <div id="measures-container" class="container">
+            <div class="intro">
+                <h2 class="text-center">Projects </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/water.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/lightbulb.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/loft.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/minibus.jpeg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Activity Carousel-->
+
+    <!--Start Parallax-->
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/img/sunset.jpg" alt="Background Pic 2"></div>
+    </div>
+    <!--End Parallax-->
+
+  <!--   <"people" article> -->
+    <div id="people-banner1" class="projects-horizontal">
+        <div class="container people">
+            <div class="intro">
+                <h2 class="text-center">Projects </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/water.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/lightbulb.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/loft.jpg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid card-pic" src="assets/img/minibus.jpeg"></a></div>
+                        <div class="col">
+                            <h3 class="name">Project Name</h3>
+                            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--     </end "people" article> -->
+
+
+    <!--Start Parallax-->
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/img/capital.jpg" alt="Background Pic 1"></div>
+    </div>
+    <!--End Parallax-->
+
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social social-block">
+                        <a href="#"><i class="icon social-icon ion-social-facebook"></i></a>
+                        <a href="#"><i class="icon social-icon ion-social-twitter"></i></a>
+                        <a href="#"><i class="icon social-icon ion-social-snapchat"></i></a>
+                        <a href="#"><i class="icon social-icon ion-social-instagram"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Austin Energy Green Building © 2018</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Custom Script -->
+    <script src="scripts/main.js"></script>
+    <!-- <script src="scripts/speedometer.js"></script> -->
+
+  </body>
+</html>
+>>>>>>> 4a9828486f5f142328fd214f854c4725e30b614c
