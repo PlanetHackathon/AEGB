@@ -1,0 +1,72 @@
+[
+    {
+    "facility_address": "2901 S CAPITAL OF TEXAS HWY, AUSTIN, TX 78746",    
+    "building_water_annual": "20",
+    "process_water_annual": "33",
+    "irrigation_water_july": "10",
+    "construction_waste": "22",
+    "salvaged_materials": "40",
+    "recycled_content": "50",
+    "texas_sourced": "40",
+    "certified_wood": "30",
+    "peak_demand_kw_aegb": "80",
+    "kw_aegb": "70",
+    "natural_gas": "90"
+    },
+    {
+    "facility_address": "11200 LAKELINE MALL, AUSTIN, TX  78750",        
+    "building_water_annual": "50",
+    "process_water_annual": "63",
+    "irrigation_water_july": "50",
+    "construction_waste": "62",
+    "salvaged_materials": "37",
+    "recycled_content": "48",
+    "texas_sourced": "45",
+    "certified_wood": "27",
+    "peak_demand_kw_aegb": "76",
+    "kw_aegb": "78",
+    "natural_gas": "40"
+    },
+    {
+    "facility_address": "3311 ESPERANZA CROSSING, AUSTIN TX, 78758",    
+    "building_water_annual": "70",
+    "process_water_annual": "39",
+    "irrigation_water_july": "80",
+    "construction_waste": "52",
+    "salvaged_materials": "70",
+    "recycled_content": "67",
+    "texas_sourced": "48",
+    "certified_wood": "70",
+    "peak_demand_kw_aegb": "60",
+    "kw_aegb": "79",
+    "natural_gas": "50"
+    },
+    {
+    "facility_address": "11301 LAKELINE BLVD, AUSTIN TX, 78750",    
+    "building_water_annual": "29",
+    "process_water_annual": "38",
+    "irrigation_water_july": "90",
+    "construction_waste": "26",
+    "salvaged_materials": "49",
+    "recycled_content": "80",
+    "texas_sourced": "53",
+    "certified_wood": "70",
+    "peak_demand_kw_aegb": "30",
+    "kw_aegb": "50",
+    "natural_gas": "60"
+    },
+    {
+    "facility_address": "12250 RESEARCH BLVD, AUSTIN TX, 78759",    
+    "building_water_annual": "10",
+    "process_water_annual": "38",
+    "irrigation_water_july": "40",
+    "construction_waste": "29",
+    "salvaged_materials": "50",
+    "recycled_content": "58",
+    "texas_sourced": "46",
+    "certified_wood": "40",
+    "peak_demand_kw_aegb": "60",
+    "kw_aegb": "50",
+    "natural_gas": "60"
+    }    
+]

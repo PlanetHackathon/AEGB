@@ -537,9 +537,10 @@ function runQuery(facilityAddress){
 
 		for (var i=0; i<response.length; i++){
 			if (response[i].facility_address === facilityAddress){
-				 return console.log(response[i]);
+				return console.log(response[i]);
 			}
 		}
+
 		function drawWithInputValue() {
 
 			iTargetSpeed = response.calculated_eui_kwh_sqft;
@@ -558,6 +559,19 @@ function runQuery(facilityAddress){
 			
 		}
 	}) 
-	   
+	function renderMetrics(){
+		$("#metricsView").empty();
+		var json = JSON.parse('../buildingData.json');
+			for(var i=0; i<json.length; i++)
+			console.log(json.data);
+			// var metricsUl = $("<ul class='list-group list-group-flush'>");
+			// var metricsLi = $("<li class='list-group-item'>json[i]</li>")
+			// metricsUl.append(metricsLi);
+
+	}
+	renderMetrics();
+
 }
 runQuery("3311 ESPERANZA CROSSING, AUSTIN TX, 78758");
+
+
