@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Building</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlanetHackathon</title>
+
+    <!-- fav image -->
+    <link rel="icon" type="image/jpg" sizes="16x16" href="assets/img/capital.jpg">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -24,6 +27,8 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+    <!-- <script src="scripts/speedometer.js"></script> -->
 </head>
 
 <body>
@@ -41,7 +46,8 @@
                 </form><a class="btn btn-light action-button" role="button" href="#">Action </a></div>
         </div>
     </nav>
-    <img class="parallax" src="assets/img/capital.jpg" width="100%" height="75%" style="display:block;">
+
+    <img class="parallax" src="assets/img/capital.jpg" width="100%" height="75%">
 
     <div class="projects-horizontal">
         <div class="container">
@@ -53,13 +59,37 @@
                 <div class="col-sm-6 item">
                     <h3 id="eui" class="text-center">KWH</h3>
                     <div class="row">
-                        <div class="col-md-12"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid">
+                            <!-- <div class="container" style="width: 100%">
+                                <canvas id="tutorial" width="440" height="220">
+                                    Canvas not available.
+                                </canvas>
+                                <div>
+                                    <form id="drawTemp">
+                                        <input type="text" id="txtSpeed" name="txtSpeed" value="20" maxlength="2"/>
+                                        <input type="button" value="Draw" onclick="drawWithInputValue();">
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 item">
                     <h3 id="kbtu" class="text-center">KBTU</h3>
                     <div class="row">       
-                        <div class="col-md-12"><a href="#"><img class="img-fluid" src="assets/img/building.jpg" alt="EUI Speedometer"></a></div>
+                        <div class="col-md-12 col-lg-5"><img class="img-fluid">
+                            <!-- <div class="container" style="width: 100%">
+                                <canvas id="tutorial" width="440" height="220">
+                                    Canvas not available.
+                                </canvas>
+                                <div>
+                                    <form id="drawTemp">
+                                        <input type="text" id="txtSpeed" name="txtSpeed" value="20" maxlength="2"/>
+                                        <input type="button" value="Draw" onclick="drawWithInputValue();">
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 item">
@@ -67,7 +97,7 @@
                         <div class="col">
                             <h3 class="text-center">Portfolio Manager Score</h3>
                             <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
-                        <div class="col-sm-12"><a href="#"><img class="img-fluid" src="" alt="bell curve"></a></div>
+                        <div class="col-sm-12"><img class="img-fluid" src="" alt="bell curve"></div>
                         </div>
                     </div>
                 </div>
@@ -75,7 +105,7 @@
         </div>
     </div>
 
-    <img class="parallax" src="assets/img/city.jpg" width="100%" height="75%"/>
+    <img class="parallax" src="assets/img/city.jpg"/>
 
     <div class="projects-horizontal">
         <div class="container">
@@ -124,7 +154,7 @@
         </div>
     </div>
 
-    <img class="parallax" src="assets/img/sunset.jpg" width="100%">
+    <img class="parallax" src="assets/img/sunset.jpg"/>
 
     <div class="projects-horizontal">
         <div class="container">
@@ -172,7 +202,7 @@
             </div>
         </div>
     </div>
-
+ 
     <div class="footer-dark">
         <footer>
             <div class="container">
