@@ -1,1 +1,0 @@
-// this is the index.js in the views folder

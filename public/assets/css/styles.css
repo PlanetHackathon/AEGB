@@ -1,7 +1,92 @@
-.parallax { 
-    /* Set a specific height */
-    height: 1000px; 
+
+/*//////////////////////////////////////////////////////////////////////////*/
+/*Nav Animation:*/
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.nav-link:hover {
+  color: white;
+}
+
+#global-nav {
+  background-color: #394b52;
+  position: fixed;
+  top: 0;
+  height: 110px;
+  line-height: 38px;
+  z-index: 9999; /*/always at top of page.*/
+  font-size: 20px;
+}
+
+#main-logo {
+    color: #56c6c6;
+    font-size: 40px;
+    display: inline-block;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.scrolled-nav  #main-logo  { 
+  font-size: 30px;
+}
+
+.main-navigation {
+  padding: 0px;
+  margin: 0px;
+}
+
+.scrolled-nav {
+  height: 145px !important;
+  line-height: 90px !important;
+
+}
+
+.scrolled-nav.action-button {
+
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+/*Footer Styling:*/
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.footer{
+  padding-top: 2%;
+}
+
+.social-icon:hover {
+  filter:invert(100%);
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+/*/////*/
+
+.social-block {
+  margin-left: 1%;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////*/
+#heading-picture {
+    /* The image used */
+    background-image: url("../img/capital.jpg");
+    /* Full height */
+    height: 100%; 
     /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-container {
+    height: 500px;
+    z-index: 1;
+}
+
+.parallax { 
+    /* Create the parallax scrolling effect */
+    z-index: 0;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,4 +96,81 @@
     .parallax {
         background-attachment: scroll;
     }
+}
+
+#people-banner {
+    background: linear-gradient(rgba(0, 0, .34, 0.10), rgba(0, 0, 0, 0.55)),
+    rgba(0, 0, 0, 0.55) no-repeat center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    padding: 0px;
+    margin: 0px;
+    height: 1000px;
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 15px 80px 15px;
+    text-align: right;
+    min-height: 640px;
+}
+
+#index-banner1{
+    width: 100%;
+    overflow: hidden;
+    background: #f5f4f4;
+}
+
+
+.btn.waves-effect.waves-light { 
+    border: 2px solid #fff;
+}
+
+
+.people{
+    margin-left: 30px;
+    padding-bottom: 5%;
+}
+
+.projects-horizontal{
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+
+
+h3{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: #56c6c6;
+}
+
+.card-pic{
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.card-pic{
+  opacity: .5;
+}
+
+.card-pic:hover {
+  opacity: 1;
+  filter: alpha(opacity=1); 
+}
+
+h5 {
+  font-family: 'Poiret One', cursive;
+  font-weight: 200;
+  margin: 0.4em 0;
+  color: black;
+}
+
+.highcharts-yaxis-grid .highcharts-grid-line {
+    display: none;
 }
