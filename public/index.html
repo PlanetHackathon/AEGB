@@ -29,7 +29,7 @@
     <!--jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Materialize JS-->
-   <!--  <script src="assets/materialize/js/materialize.min.js"></script>   -->
+    <script src="assets/materialize/js/materialize.min.js"></script>  
     <!-- Bootstrap Script -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- Chart.js Script -->
@@ -38,11 +38,9 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </head>
 
@@ -110,7 +108,7 @@
                             <input  id="search-field" class="form-control search-field text-center" type="search" name="search" placeholder="ie: 201 East 14th Street, Austin, Tx 78701">
                         </div>
                         <div class="col-md-2 col-xs-2 col1 center-block"> 
-                            <a class="btn btn-lg btn-light action-button" role="button" onclick="runQuery($('#search-field.value'));">Submit</a>
+                            <a id= "searchButton" class="btn btn-lg btn-light action-button" role="button" >Submit</a>
                         </div>
                     </form>
                 </div>            
@@ -164,8 +162,8 @@
             <div class="row" style="margin-top: 0px; padding-top: 10px">
                 <div class="col">
                     <h3 class="text-center">Portfolio Manager Score</h3>
-                    <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
-                    <div class="col-sm-12 mx-auto" style="width: 800px" >
+                    <h1 class="text-center" id= "profManScore"></h1>
+                    <div class="col-sm-12 mx-auto" style="width: 800px" > 
                         <img class="img-fluid" style="width: 800px" src="assets/img/bellcurve.png" alt="bell curve"/>
                     </div>
                     <!-- <div class="row">       
@@ -370,4 +368,5 @@
     <!-- Custom Script -->
     
   </body>
+
 </html>
