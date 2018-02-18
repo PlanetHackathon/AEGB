@@ -4,14 +4,8 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $('.collapsible').collapsible();
 
-<<<<<<< HEAD
-
 // Nav Scroll Logic
 //==================================
-=======
-  // Nav Scroll Logic
-  //==================================
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
   var scrollTop = 0;
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
@@ -28,12 +22,7 @@ $(document).ready(function() {
 // Gauge Logic
 //==================================
   
-<<<<<<< HEAD
   var gaugeOptions = {
-=======
-    var gaugeOptions = {
-
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
       chart: {
           type: 'solidgauge'
       },
@@ -86,13 +75,8 @@ $(document).ready(function() {
       }
     };
 
-<<<<<<< HEAD
-
   // The speed gauge
   var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
-=======
-    var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
       yAxis: {
           min: 0,
           max: 300,
@@ -106,13 +90,8 @@ $(document).ready(function() {
       },
 
       series: [{
-<<<<<<< HEAD
-          name: 'Building kWH',
-          data: [80],
-=======
-          name: 'Speed',
+          name: 'Building kWH', // >> WAS PREVIOUSLY "speed"
           data: [0],
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                   ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
@@ -125,13 +104,8 @@ $(document).ready(function() {
 
     }));
 
-<<<<<<< HEAD
-
   // The RPM gauge
   var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
-=======
-    var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
       yAxis: {
           min: 0,
           max: 300,
@@ -141,13 +115,8 @@ $(document).ready(function() {
       },
 
       series: [{
-<<<<<<< HEAD
-          name: 'Building kBTU',
-          data: [1],
-=======
-          name: 'RPM',
+          name: 'Building kBTU', // >> WAS PREVIOUSLY "rpm"
           data: [0],
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                   ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
@@ -157,8 +126,6 @@ $(document).ready(function() {
               valueSuffix: ' kBTU'
           }
       }]
-
-<<<<<<< HEAD
   }));
 
 
@@ -167,17 +134,10 @@ $(document).ready(function() {
   function runQuery(value) {
     //take in the value and plug it into the google docs info.
   }
+  function runQuery(facilityAddress){
+      var facAddress = facilityAddress;
+      var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json"; 
 
-  var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
-  function runQuery(facilityAddress){       
-=======
-    }));
-
-    function runQuery(facilityAddress){
-        var facAddress = facilityAddress;
-        var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json"; 
-
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -228,46 +188,40 @@ $(document).ready(function() {
                         }
                     }; 
                     updateDialData(response[i].portfolio_manager_energy_star_score);
-                    $("#profManScore").text(response[i].portfolio_manager_energy_star_score); 
-                    
+                    $("#profManScore").text(response[i].portfolio_manager_energy_star_score);                  
                 }
-<<<<<<< HEAD
             };
   
             // Bring life to the dials
-            setInterval(function (response) {      
-                var point, // Speed
-                    newVal,
-                    inc;
+            // setInterval(function (response) {      
+            //     var point, // Speed
+            //         newVal,
+            //         inc;
 
-                if (chartSpeed) {
-                    point = chartSpeed.series[0].points[0];
-                    inc = Math.round((Math.random() - 0.5) * 100);
-                    newVal = point.y + inc;
+            //     if (chartSpeed) {
+            //         point = chartSpeed.series[0].points[0];
+            //         inc = Math.round((Math.random() - 0.5) * 100);
+            //         newVal = point.y + inc;
 
-                    if (newVal < 0 || newVal > 300) {
-                        newVal = point.y - inc;
-                    };
-                    point.update(newVal);
-                }
+            //         if (newVal < 0 || newVal > 300) {
+            //             newVal = point.y - inc;
+            //         };
+            //         point.update(newVal);
+            //     }
 
-                if (chartRpm) { // RPM
-                    point = chartRpm.series[0].points[0];
-                    inc = Math.round((Math.random() - 0.5) * 100);
-                    newVal = point.y + inc;
+            //     if (chartRpm) { // RPM
+            //         point = chartRpm.series[0].points[0];
+            //         inc = Math.round((Math.random() - 0.5) * 100);
+            //         newVal = point.y + inc;
 
-                    if (newVal < 0 || newVal > 300) {
-                        newVal = point.y - inc;
-                    };
+            //         if (newVal < 0 || newVal > 300) {
+            //             newVal = point.y - inc;
+            //         };
 
-                    point.update(newVal);
-                }
-            }, 2000);
-=======
-                    
-                
-            }
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
+            //         point.update(newVal);
+            //     }
+            // }, 2000);
+
 
             function renderMetrics(facAddress){
                 $("#metricsView").empty();
@@ -276,10 +230,10 @@ $(document).ready(function() {
                     dataType: "json",
                     method: "GET"
                 }).done(function(bldgdata){
-<<<<<<< HEAD
+                    console.log(bldgdata);
                     for(var i=0; i<bldgdata.length; i++) {
-                      if (facility_address === facAddress) {
-                        console.log(bldgdata[i]);
+                      if (bldgdata[i].facility_address === facAddress) {
+                        console.log(bldgdata[i].facility_address);
                         // var metricsUl = $("<ul class='list-group list-group-flush'>");
                         // var metricsLi = $("<li class='list-group-item'>json[i]</li>")
                         // metricsUl.append(metricsLi);
@@ -289,30 +243,12 @@ $(document).ready(function() {
             }
             renderMetrics(facilityAddress);        
         }) //end of .done
-      }//end of run query function
-      
-}); //end of document.ready "file"
-=======
-                    console.log(bldgdata);
-                    for(var i=0; i<bldgdata.length; i++)
-                    if (bldgdata[i].facility_address === facAddress)
-                    console.log(bldgdata[i].facility_address);
-                    // var metricsUl = $("<ul class='list-group list-group-flush'>");
-                    // var metricsLi = $("<li class='list-group-item'>json[i]</li>")
-                    // metricsUl.append(metricsLi);
-                })
-                
-            }
-            renderMetrics();
-        }) 
+      }//end of runQuery function
 
-    };
-
-    $('#searchButton').click(function(){
+      $('#searchButton').click(function(){
         runQuery($('#search-field').val());
         console.log($('#search-field').val());
-    });
-//   runQuery();
-});
-//"3311 ESPERANZA CROSSING, AUSTIN TX, 78758"
->>>>>>> c1f114b99d9bc539a09bd1a2427db0957d134951
+      });
+      //"3311 ESPERANZA CROSSING, AUSTIN TX, 78758"
+      
+}); //end of document.ready "file"
