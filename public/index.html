@@ -29,7 +29,7 @@
     <!--jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Materialize JS-->
-   <!--  <script src="assets/materialize/js/materialize.min.js"></script>   -->
+    <script src="assets/materialize/js/materialize.min.js"></script>  
     <!-- Bootstrap Script -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- Chart.js Script -->
@@ -38,11 +38,9 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </head>
 
@@ -67,20 +65,30 @@
         <div class="form-inline my-2 my-lg-0">
           <a class="btn btn-lg btn-light action-button" role="button" href="https://austinenergyapp.com" target="_blank" style=" background-color:#56c6c6; border-radius: 5px; color: #fff !important; border-color: #56c6c6"><h5 style="line-height: 0.5; color:white">Find My Home</h5></a>
         </div>
-    </nav><img src="assets/img/capital.jpg" width="100%" height="75%" style="display:block;">
-    <div class="container" style="width: 100%">
-		<canvas id="tutorial" width="440" height="220">
-			Canvas not available.
-		</canvas>
-		<div>
-			<form id="drawTemp">
-				<!-- <input type="text" id="txtSpeed" name="txtSpeed" value="20" maxlength="2"/>
-				<input type="button" value="Draw" onclick="drawWithInputValue();"> -->
-			</form>
-		</div>
-      </div>
     </nav>
     <!--NavBar End-->
+
+    <img src="assets/img/capital.jpg" width="100%" height="85%" style="display:block;">
+    
+    <!--Start About Title-->
+    <hr style="background-color:#56c6c6; height:5px"/>
+    <div class="container" style="width: 100%">
+        <div class="row">
+        	<div class="col-md-12">
+                <br/>
+                <h3>Austin Energy Green Building</h3>
+                <hr/>
+                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                <br/>
+                <div class="col-sm-12 mx-auto" style="width: 800px" >
+                    <img class="img-fluid" src="assets/img/about.png" alt="About Article /Script" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="background-color:#56c6c6; height: 5px" />
+    <!--End About Title-->
+
 
     <!--Start Parallax-->
     <div class="parallax-container" style="height: 1000px">
@@ -89,6 +97,7 @@
     <!--End Parallax-->
 
     <!--Start Search-Area-->
+    <hr style="background-color:#56c6c6;" />
     <div id="search-container" class="projects-horizontal" style="height:300px">
         <div class="container">
             <div id="search" class="row">
@@ -96,39 +105,44 @@
                     <form class="mr-auto" target="_self">
                         <div class="form-group text-center">
                             <label for="search-field"><i class="glyphicon glyphicon-phone-alt" style="font-size:40px;"></i><h3>Search for a building here.</h3></label>
-                            <input class="form-control search-field" type="search" name="search" id="search-field">
+                            <input  id="search-field" class="form-control search-field text-center" type="search" name="search" placeholder="ie: 201 East 14th Street, Austin, Tx 78701">
                         </div>
                         <div class="col-md-2 col-xs-2 col1 center-block"> 
-                            <a class="btn btn-lg btn-light action-button" role="button" onclick= "runQuery($('#search-field.value'));">Submit</a>
+                            <a id= "searchButton" class="btn btn-lg btn-light action-button" role="button" >Submit</a>
                         </div>
                     </form>
                 </div>            
             </div>
         </div>
     </div>
+    <hr style="background-color:#56c6c6;" />
     <!--End Search-Area-->
 
     <!--Start Parallax-->
     <div class="parallax-container">
-        <div class="parallax"><img src="assets/img/sunset.jpg" alt="Background Pic 2"></div>
+        <div class="parallax"><img src="assets/img/aegb_house-example.jpg" alt="Background Pic 2"></div>
     </div>
     <!--End Parallax-->
  
     <!--Start Dashboard-->
+    <hr style="background-color:#56c6c6;" />
     <div id="projects-intro" class="projects-horizontal">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Green Building Overview</h2>
+                <h3 id="building-name" class="text-center">Building Name Appears Here</h3>
+                <br/>
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                <br/>
             </div>
             <div class="row projects" style="margin-bottom: 0px; padding-bottom: 0px">
                 <div class="col-sm-6 item">
                     <h3 id="eui" class="text-center">KWH</h3>
                     <div class="row">
                         <div class="col-md-6">
-                            <div style="width: 600px; height: 400px; margin: 0 auto">
+                            <div style="width: 400px; height: 200px; margin: 0 auto">
                                 <div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
-                                <div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -137,38 +151,57 @@
                     <h3 id="kbtu" class="text-center">KBTU</h3>
                     <div class="row">       
                         <div class="col-md-6">
-                            <div style="width: 600px; height: 400px; margin: 0 auto">
-                                <div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
+                            <div style="width: 400px; height: 200px; margin: 0 auto">
                                 <div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 0px; padding-top: 0px">
+            <hr/>
+            <div class="row" style="margin-top: 0px; padding-top: 10px">
                 <div class="col">
                     <h3 class="text-center">Portfolio Manager Score</h3>
-                    <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
-                    <div class="col-sm-12 mx-auto" style="width: 800px" >
+                    <h1 class="text-center" id= "profManScore"></h1>
+                    <div class="col-sm-12 mx-auto" style="width: 800px" > 
                         <img class="img-fluid" style="width: 800px" src="assets/img/bellcurve.png" alt="bell curve"/>
+                    </div>
+                    <!-- <div class="row">       
+                        <div class="col-md-6">
+                            <div style="width: 400px; height: 200px; margin: 0 auto">
+                                <div id="highcharts-Bellcurve" style="width: 300px; height: 200px; float: left"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <hr/>
+            <div class="row" style="margin-top: 30px; padding-top: 10px">
+                <div class="col">
+                    <h3 class="text-center">Building Locations</h3>
+                    <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus.</p>
+                    <div class="col-sm-12 mx-auto" style="width: 800px" >
+                        Google Map Goes Here.
                     </div>
                 </div>
             </div>
         </div>
     </div> 
+    <hr style="background-color:#56c6c6;" />
     <!--End Dashboard-->
 
     <!--Start Parallax-->
     <div class="parallax-container">
-        <div class="parallax"><img src="assets/img/city.jpg" alt="Background Pic 3"></div>
+        <div class="parallax"><img src="assets/img/sunset.jpg" alt="Background Pic 3"></div>
     </div>
     <!--End Parallax-->
 
-    <!--Start Activity Carousel-->
+    <!--Start Impact Section-->
+    <hr style="background-color:#56c6c6;" />
     <div class="projects-horizontal">
         <div id="measures-container" class="container">
             <div class="measures">
-                <h2 class="text-center">Imapct </h2>
+                <h2 class="text-center">Impact </h2>
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <div class="row projects">
@@ -235,7 +268,8 @@
             </div>
         </div>
     </div>
-    <!--End Activity Carousel-->
+    <hr style="background-color:#56c6c6;" />
+    <!--End Impact Section-->
 
     <!--Start Parallax-->
     <div class="parallax-container">
@@ -243,7 +277,8 @@
     </div>
     <!--End Parallax-->
 
-  <!--   <"people" article> -->
+    <!-- Start People Section -->
+    <hr style="background-color:#56c6c6;" />
     <div id="people-banner1" class="projects-horizontal" style="padding-bottom: 0px">
         <div class="container people">
             <div class="people">
@@ -254,33 +289,38 @@
                 <div class="col-sm-4"></div>
                 <ul class="collapsible col-sm-6" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Water</div>
+                      <div class="collapsible-header"><i class="material-icons">opacity</i>Water</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">light_bulb</i>Energy</div>
+                      <div class="collapsible-header"><i class="material-icons">lightbulb_outline</i>Energy</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">leaf</i>Material</div>
+                      <div class="collapsible-header"><i class="material-icons">grain</i>Material</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">building</i>Location</div>
+                      <div class="collapsible-header"><i class="material-icons">landscape</i>Location</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">building</i>Location</div>
+                      <div class="collapsible-header"><i class="material-icons">local_florist</i>Inside Environment</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
                     <li>
-                      <div class="collapsible-header"><i class="material-icons">building</i>Location</div>
+                      <div class="collapsible-header"><i class="material-icons">trending_up</i>Equity</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">school</i>Education</div>
                       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                     </li>
               </ul>
             </div>        
         </div>
     </div>
+    <hr style="background-color:#56c6c6;" />
 <!--     </end "people" article> -->
 
 
@@ -297,32 +337,30 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
+                        <ul style="text-align: center">
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/programs/single-family" target="_blank">Single Family</a></li>
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/programs/multifamily" target="_blank">Multifamily</a></li>
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/programs/commercial" target="_blank">Commerical</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
                         <h3>About</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
+                        <ul style="text-align: center">
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/home" target="_blank" >Company</a></li>
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/news" target="_blank" >News and Events</a></li>
+                            <li><a href="https://greenbuilding.austinenergy.com/aegb/about/contact-us" target="_blank">Contact Us</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
                     <div class="col item social social-block">
-                        <a href="#"><i class="icon social-icon ion-social-facebook"></i></a>
-                        <a href="#"><i class="icon social-icon ion-social-twitter"></i></a>
-                        <a href="#"><i class="icon social-icon ion-social-snapchat"></i></a>
-                        <a href="#"><i class="icon social-icon ion-social-instagram"></i></a>
+                        <a href="https://www.facebook.com/aegreenbuilding/" target="_blank"><i class="icon social-icon ion-social-facebook"></i></a>
+                        <a href="https://twitter.com/search?q=austin%20energy%20green%20building&src=typd" target="_blank"><i class="icon social-icon ion-social-twitter"></i></a>
+                        <a href="https://www.instagram.com/explore/locations/239420152/city-of-austin-electric-austin-energy" target="_blank"><i class="icon social-icon ion-social-instagram"></i></a>
                     </div>
                 </div>
-                <p class="copyright">Austin Energy Green Building © 2018</p>
+                <div class="col">
+                    <hr style="height: 15px" />
+                    <p class="copyright">Austin Energy Green Building © 2018</p>
+                </div>  
             </div>
         </footer>
     </div>
@@ -330,4 +368,5 @@
     <!-- Custom Script -->
     
   </body>
+
 </html>
