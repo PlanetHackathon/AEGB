@@ -131,9 +131,10 @@ $(document).ready(function() {
 
 // Location or Building Submit Logic
 //==================================
-  function runQuery(value) {
+  // function runQuery(value) {
     //take in the value and plug it into the google docs info.
-  }
+  // }
+
   function runQuery(facilityAddress){
       var facAddress = facilityAddress;
       var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json"; 
@@ -188,7 +189,7 @@ $(document).ready(function() {
                         }
                     }; 
                     updateDialData(response[i].portfolio_manager_energy_star_score);
-                    $("#profManScore").text(response[i].portfolio_manager_energy_star_score);                  
+                    $("#profManScore").text(response[i].portfolio_manager_energy_star_score);  //Display the portfolio mangager score! !!                 
                 }
             };
   
