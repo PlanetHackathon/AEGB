@@ -4,8 +4,8 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $('.collapsible').collapsible();
 
-// Nav Scroll Logic
-//==================================
+  // Nav Scroll Logic
+  //==================================
   var scrollTop = 0;
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
@@ -22,7 +22,7 @@ $(document).ready(function() {
 // Gauge Logic
 //==================================
   
-  var gaugeOptions = {
+    var gaugeOptions = {
 
       chart: {
           type: 'solidgauge'
@@ -74,10 +74,9 @@ $(document).ready(function() {
               }
           }
       }
-  };
+    };
 
-  // The speed gauge
-  var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+    var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
       yAxis: {
           min: 0,
           max: 300,
@@ -92,7 +91,7 @@ $(document).ready(function() {
 
       series: [{
           name: 'Speed',
-          data: [80],
+          data: [0],
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                   ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
@@ -103,10 +102,9 @@ $(document).ready(function() {
           }
       }]
 
-  }));
+    }));
 
-  // The RPM gauge
-  var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
+    var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
       yAxis: {
           min: 0,
           max: 300,
@@ -117,10 +115,10 @@ $(document).ready(function() {
 
       series: [{
           name: 'RPM',
-          data: [1],
+          data: [0],
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                  ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+                  ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
                      '<span style="font-size:12px;color:silver">kBTU</span></div>'
           },
           tooltip: {
@@ -128,12 +126,12 @@ $(document).ready(function() {
           }
       }]
 
-  }));
+    }));
 
-  var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
-
-  function runQuery(facilityAddress){
+    function runQuery(facilityAddress){
         var facAddress = facilityAddress;
+        var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json"; 
+
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -146,65 +144,77 @@ $(document).ready(function() {
     
             for (var i=0; i<response.length; i++){
                 if (response[i].facility_address === facilityAddress){
-                    return console.log(response[i]);
+                    console.log(response[i]);
+                    var kWHinc = response[i].calculated_eui_kwh_sqft;
+                    console.log(kWHinc);
+                    var kBTUinc = response[i].portfolio_manger_site_eui_kbtu_sqft;
+                    console.log(kBTUinc);
+    
+                    function updateDialData(){
+                        // var point,
+                        //     kWHnewVal,
+                        //     kBTUnewVal;
+        
+                        if (chartSpeed) {
+                            point = chartSpeed.series[0].points[0];
+                            console.log(point);
+                            kWHnewVal = Math.floor(kWHinc);
+                            console.log(kWHnewVal);
+
+                            if (kWHnewVal < 0 || kWHnewVal > 300) {
+                                kWHnewVal = 300;
+                            }
+        
+                            point.update(kWHnewVal);
+                        }
+        
+                        if (chartRpm) {
+                            point = chartRpm.series[0].points[0];
+                            console.log(point);
+                            kBTUnewVal = Math.floor(kBTUinc);
+                            console.log(kBTUnewVal);
+        
+                            if (kBTUnewVal < 0 || kBTUnewVal > 300) {
+                                kBTUnewVal = 300;
+                            }
+        
+                            point.update(kBTUnewVal);
+                        }
+                    }; 
+                    updateDialData(response[i].portfolio_manager_energy_star_score);
+                    $("#profManScore").text(response[i].portfolio_manager_energy_star_score); 
+                    
                 }
+                    
+                
             }
-  
-            // Bring life to the dials
-            setInterval(function (response) {
-                // Speed
-                var point,
-                    newVal,
-                    inc;
-
-                if (chartSpeed) {
-                    point = chartSpeed.series[0].points[0];
-                    inc = Math.round((Math.random() - 0.5) * 100);
-                    newVal = point.y + inc;
-
-                    if (newVal < 0 || newVal > 300) {
-                        newVal = point.y - inc;
-                    }
-
-                    point.update(newVal);
-                }
-
-                // RPM
-                if (chartRpm) {
-                    point = chartRpm.series[0].points[0];
-                    inc = Math.round((Math.random() - 0.5) * 100);
-                    newVal = point.y + inc;
-
-                    if (newVal < 0 || newVal > 300) {
-                        newVal = point.y - inc;
-                    }
-
-                    point.update(newVal);
-                }
-            }, 2000);
 
             function renderMetrics(facAddress){
                 $("#metricsView").empty();
                 $.ajax({
-                    url: "../buildingData.json",
+                    url: "/data",
                     dataType: "json",
                     method: "GET"
                 }).done(function(bldgdata){
+                    console.log(bldgdata);
                     for(var i=0; i<bldgdata.length; i++)
-                    if (facility_address === facAddress)
-                    console.log(bldgdata[i]);
+                    if (bldgdata[i].facility_address === facAddress)
+                    console.log(bldgdata[i].facility_address);
                     // var metricsUl = $("<ul class='list-group list-group-flush'>");
                     // var metricsLi = $("<li class='list-group-item'>json[i]</li>")
                     // metricsUl.append(metricsLi);
                 })
                 
-        
             }
             renderMetrics();
         }) 
-        
-  
-  }
+
+    };
+
+    $('#searchButton').click(function(){
+        runQuery($('#search-field').val());
+        console.log($('#search-field').val());
+    });
 //   runQuery();
 });
 //"3311 ESPERANZA CROSSING, AUSTIN TX, 78758"

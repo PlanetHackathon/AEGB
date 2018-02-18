@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// this is the index.js in the views folder
-=======
-=======
->>>>>>> 819b3c6fd8c198241ed983167263e7e74a2e066f
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +29,7 @@
     <!--jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Materialize JS-->
-   <!--  <script src="assets/materialize/js/materialize.min.js"></script>   -->
+    <script src="assets/materialize/js/materialize.min.js"></script>  
     <!-- Bootstrap Script -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- Chart.js Script -->
@@ -44,11 +38,9 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </head>
 
@@ -105,7 +97,7 @@
                             <input class="form-control search-field" type="search" name="search" id="search-field">
                         </div>
                         <div class="col-md-2 col-xs-2 col1 center-block"> 
-                            <a class="btn btn-lg btn-light action-button" role="button" onclick= "runQuery($('#search-field.value'));">Submit</a>
+                            <a class="btn btn-lg btn-light action-button" role="button" id= "searchButton">Submit</a>
                         </div>
                     </form>
                 </div>            
@@ -125,7 +117,7 @@
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Green Building Overview</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                <p class="text-center"></p>
             </div>
             <div class="row projects" style="margin-bottom: 0px; padding-bottom: 0px">
                 <div class="col-sm-6 item">
@@ -154,8 +146,8 @@
             <div class="row" style="margin-top: 0px; padding-top: 0px">
                 <div class="col">
                     <h3 class="text-center">Portfolio Manager Score</h3>
-                    <p class="text-center">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
-                    <div class="col-sm-12 mx-auto" style="width: 800px" >
+                    <h1 class="text-center" id= "profManScore"></h1>
+                    <div class="col-sm-12 mx-auto" style="width: 800px" > 
                         <img class="img-fluid" style="width: 800px" src="assets/img/bellcurve.png" alt="bell curve"/>
                     </div>
                 </div>
@@ -317,10 +309,10 @@
                             <li><a href="#">Careers</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6 item text">
+                    <!-- <div class="col-md-6 item text">
                         <h3>Company Name</h3>
                         <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                    </div>
+                    </div> -->
                     <div class="col item social social-block">
                         <a href="#"><i class="icon social-icon ion-social-facebook"></i></a>
                         <a href="#"><i class="icon social-icon ion-social-twitter"></i></a>
@@ -336,9 +328,5 @@
     <!-- Custom Script -->
     
   </body>
-<<<<<<< HEAD
+
 </html>
->>>>>>> 4a9828486f5f142328fd214f854c4725e30b614c
-=======
-</html>
->>>>>>> 819b3c6fd8c198241ed983167263e7e74a2e066f
