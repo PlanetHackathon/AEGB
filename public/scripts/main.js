@@ -4,6 +4,7 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $('.collapsible').collapsible();
 
+
 // Nav Scroll Logic
 //==================================
   var scrollTop = 0;
@@ -23,7 +24,6 @@ $(document).ready(function() {
 //==================================
   
   var gaugeOptions = {
-
       chart: {
           type: 'solidgauge'
       },
@@ -76,6 +76,7 @@ $(document).ready(function() {
       }
   };
 
+
   // The speed gauge
   var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
       yAxis: {
@@ -91,7 +92,7 @@ $(document).ready(function() {
       },
 
       series: [{
-          name: 'Speed',
+          name: 'Building kWH',
           data: [80],
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
@@ -105,6 +106,7 @@ $(document).ready(function() {
 
   }));
 
+
   // The RPM gauge
   var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
       yAxis: {
@@ -116,7 +118,7 @@ $(document).ready(function() {
       },
 
       series: [{
-          name: 'RPM',
+          name: 'Building kBTU',
           data: [1],
           dataLabels: {
               format: '<div style="text-align:center"><span style="font-size:25px;color:' +
@@ -130,10 +132,15 @@ $(document).ready(function() {
 
   }));
 
-  var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
 
-  function runQuery(facilityAddress){
-        var facAddress = facilityAddress;
+// Location or Building Submit Logic
+//==================================
+  function runQuery(value) {
+    //take in the value and plug it into the google docs info.
+  }
+
+  var queryURL = "https://data.austintexas.gov/resource/5mvc-79r6.json" 
+  function runQuery(facilityAddress){       
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -148,12 +155,11 @@ $(document).ready(function() {
                 if (response[i].facility_address === facilityAddress){
                     return console.log(response[i]);
                 }
-            }
+            };
   
             // Bring life to the dials
-            setInterval(function (response) {
-                // Speed
-                var point,
+            setInterval(function (response) {      
+                var point, // Speed
                     newVal,
                     inc;
 
@@ -164,20 +170,18 @@ $(document).ready(function() {
 
                     if (newVal < 0 || newVal > 300) {
                         newVal = point.y - inc;
-                    }
-
+                    };
                     point.update(newVal);
                 }
 
-                // RPM
-                if (chartRpm) {
+                if (chartRpm) { // RPM
                     point = chartRpm.series[0].points[0];
                     inc = Math.round((Math.random() - 0.5) * 100);
                     newVal = point.y + inc;
 
                     if (newVal < 0 || newVal > 300) {
                         newVal = point.y - inc;
-                    }
+                    };
 
                     point.update(newVal);
                 }
@@ -190,21 +194,18 @@ $(document).ready(function() {
                     dataType: "json",
                     method: "GET"
                 }).done(function(bldgdata){
-                    for(var i=0; i<bldgdata.length; i++)
-                    if (facility_address === facAddress)
-                    console.log(bldgdata[i]);
-                    // var metricsUl = $("<ul class='list-group list-group-flush'>");
-                    // var metricsLi = $("<li class='list-group-item'>json[i]</li>")
-                    // metricsUl.append(metricsLi);
-                })
-                
-        
+                    for(var i=0; i<bldgdata.length; i++) {
+                      if (facility_address === facAddress) {
+                        console.log(bldgdata[i]);
+                        // var metricsUl = $("<ul class='list-group list-group-flush'>");
+                        // var metricsLi = $("<li class='list-group-item'>json[i]</li>")
+                        // metricsUl.append(metricsLi);
+                      }
+                    }
+                });      
             }
-            renderMetrics();
-        }) 
-        
-  
-  }
-//   runQuery();
-});
-//"3311 ESPERANZA CROSSING, AUSTIN TX, 78758"
+            renderMetrics(facilityAddress);        
+        }) //end of .done
+      }//end of run query function
+      
+}); //end of document.ready "file"
