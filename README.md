@@ -1,5 +1,5 @@
 # AEGB
-## McCombs School of Business 3P Civic Hackathon Event
+## McCombs School of Business 3P Civic Hackathon.
 > An interactive application that promotes awareness for energy use and "green building." This app is built in HTML5/CSS3, Bootstrap, Materialize, JavaScript, and Node.js
 
 View the application [here](https://planethackathon.github.io/AEGB/)!
