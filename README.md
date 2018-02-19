@@ -14,13 +14,13 @@ Isai Solis – Backend Developer & Tester
 
 Tony Pekearo – Frontend Developer & Tester
 
-Lisa Jetton – Backend Developer & Content Editor
+Lisa Jetton – Frontend Developer & Product Development
 
 Daisy Torres - UX Design & Content Editor
 
-Sam Kahn - UX Design & Product Developement
+Sam Kahn - UX Design & Product Development
 
-Nico Robles – UX Design & Product Developement
+Nico Robles – UX Design & Product Development
 
 
 
